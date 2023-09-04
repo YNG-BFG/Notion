@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Widget with Track List</title>
+    <style>
+        /* Style the container for the music player and track list */
+        .music-player-container {
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Style the cover image */
+        .cover-image {
+            max-width: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Style the track list */
+        .track-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Style the track list items */
+        .track-list-item {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="music-player-container">
+        <h1>Music Player</h1>
+        <img src="your-cover-image.jpg" alt="Cover Image" class="cover-image">
+        <audio id="audio-player" controls>
+            <source src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <ul class="track-list">
+            <li class="track-list-item"><a href="your-music-file1.mp3" onclick="playTrack('your-music-file1.mp3')">Track 1</a></li>
+            <li class="track-list-item"><a href="your-music-file2.mp3" onclick="playTrack('your-music-file2.mp3')">Track 2</a></li>
+            <!-- Add more track list items as needed -->
+        </ul>
+    </div>
+
+    <script>
+        function playTrack(trackUrl) {
+            const audioPlayer = document.getElementById('audio-player');
+            audioPlayer.src = trackUrl;
+            audioPlayer.play();
+        }
+    </script>
+</body>
+</html>
