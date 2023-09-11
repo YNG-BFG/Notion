@@ -1,2 +1,2 @@
 # Notion
-Repository for Notion widgets
+Repository for Notion widgets.
