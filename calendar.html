@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+</head>
+<body>
+
+<div id='calendar'></div>
+
+<script>
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            events: 'webcal://p164-caldav.icloud.com/published/2/MjAzNjIxMDg5ODIwMzYyMZyxWsmcm80t3AzBVBlfuZpE2w5bvDQLOx-FtHxDUnlOBK4KIgblEQ-syIGWu0Wj5orVdDtfQuU_Vh6lMk05sA8',
+            // You can add more configuration options here
+        });
+    });
+</script>
+
+</body>
+</html>
