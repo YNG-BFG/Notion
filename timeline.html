@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JSON Data</title>
+</head>
+<body>
+    <h1>User Information</h1>
+    <div id="user-info">
+        <!-- JSON data will be displayed here -->
+    </div>
+
+    <!-- JavaScript to fetch and display JSON data -->
+    <script>
+        // Fetch JSON data from the file
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Access JSON data and update HTML content
+                document.getElementById('user-info').innerHTML = `
+                    <p>Name: ${data.name}</p>
+                    <p>Age: ${data.age}</p>
+                    <p>City: ${data.city}</p>
+                `;
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+    </script>
+</body>
+</html>
