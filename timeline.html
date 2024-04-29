@@ -6,22 +6,33 @@
     <title>Display JSON Data</title>
 </head>
 <body>
-    <h1>User Information</h1>
-    <div id="user-info">
+    <h1>JSON Data</h1>
+    <div id="data-container">
         <!-- JSON data will be displayed here -->
     </div>
 
     <!-- JavaScript to fetch and display JSON data -->
     <script>
         // Fetch JSON data from the file
-        fetch('bubbles.json')
+        fetch('data.json')
             .then(response => response.json())
             .then(data => {
-                // Access JSON data and update HTML content
-                document.getElementById('user-info').innerHTML = `
-                    <p>Name: ${data.name}</p>
-                    <p>Age: ${data.age}</p>
-                    <p>City: ${data.city}</p>
+                // Access JSON data and create HTML structure
+                const dataContainer = document.getElementById('data-container');
+                dataContainer.innerHTML = `
+                    <h2>Theme:</h2>
+                    <p>Primary Color: ${data.theme.primary}</p>
+                    <p>Accent Color: ${data.theme.accent}</p>
+                    <p>Printing Enabled: ${data.theme.isPrinting ? 'Yes' : 'No'}</p>
+                    <h2>Bubbles:</h2>
+                    <ul>
+                        ${data.bubbles.map(bubble => `
+                            <li>
+                                <strong>Title:</strong> ${bubble.title}<br>
+                                <strong>Comment:</strong> ${bubble.comment}<br>
+                            </li>
+                        `).join('')}
+                    </ul>
                 `;
             })
             .catch(error => console.error('Error fetching JSON:', error));
